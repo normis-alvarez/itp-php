@@ -25,6 +25,10 @@ $product = [
 	'available' => true,
 ];
 
+foreach ($product as $field => $value) {
+    echo "\n$field: $value";
+}
+	
 echo "\nEste es el precio del producto{$product['price']}\n";
 echo $product['name'];
 
@@ -34,8 +38,89 @@ print_r($people);
 
 //Variables variables
 $foo = 'bar';
-$$foo = 'baz'?;
+$$foo = 'baz';
 
 echo "\n$foo";
 echo "\n$bar";
 
+$bigVariable = 'PHP';
+$short = &$bigVariable;
+$bigVariable .= ' Rocks!';
+echo "Short is $short";
+echo "Long is $bigVariable";
+
+
+function update_counter()
+{
+    global $counter;
+	$counter++;
+}
+$counter = 10;
+update_counter();
+echo $counter;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$password = 'Letmein';
+if ($password === 'letmein') {
+
+    echo 'Password is correct';
+}  else {
+      echo 'Try again';
+}
+
+$color = 'red';
+switch ($color)
+{
+    case 'green':
+	    echo 'Green';
+		break;
+	case 'blue':
+        echo 'Blue';
+        break;		
+	default:
+	    echo $color;
+}
+
+
+function test()
+{
+    $parameter1 = 'foo';
+    $parameter2 = 'bar';
+    if ($parameter1 === 'baz') {
+	    die('Terminate script');
+	}
+	
+	return "\n$parameter1 $parameter2";
+}
+//return 'Luis';
+echo test();
+exit(0);
+
+$configuration = require 'configuration.php';
+print_r($configuration);
+	
